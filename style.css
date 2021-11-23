@@ -1,0 +1,386 @@
+/*
+#070A0F,
+#1E2530,
+#393157,
+#245A8F,
+#9E578E,
+#C0B4C8,
+#B84C41,
+#64A091
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  /* background-color: #1e2530; */
+  background-color: black;
+  font-family: "Oxygen", sans-serif;
+  overflow-x: hidden;
+}
+
+.circle{
+  display: none;
+}
+
+.page-name {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-left: 20px;
+  padding-top: 20px;
+  transform-origin: top left;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #b84c41;
+}
+
+.page-name:nth-child(even) {
+  color: #64a091;
+}
+
+.page-name:nth-child(2) {
+  transform: rotate(-90deg);
+}
+.page-name:nth-child(3) {
+  transform: rotate(-180deg);
+}
+.page-name:nth-child(4) {
+  transform: rotate(-270deg);
+}
+
+.move-anti-clockwise,
+.move-clockwise {
+  position: absolute;
+  margin: 30px;
+  margin-right: 50px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  z-index: 2;
+  display: none;
+}
+.move-anti-clockwise {
+  right: 0;
+  top: 0;
+}
+
+.move-clockwise {
+  bottom: 0;
+  right: 0;
+}
+.about-me-page,
+.skills-page,
+.projects-page,
+.social-media-page {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-page{
+  flex-direction: column;
+}
+
+.social-media-page>div{
+  display: flex;
+}
+
+.about-me-page {
+  transform: rotate(0deg);
+  flex-direction: column;
+  background-color: black;
+  z-index: -10;
+}
+
+.welcome-text {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.description {
+  font-size: 1.5rem;
+}
+
+.description span:nth-of-type(1) {
+  color: #b84c41;
+}
+.description span:nth-of-type(2) {
+  color: #64a091;
+}
+/* font-family: 'Fira Sans', sans-serif; */
+
+.card {
+  background-color: white;
+  /* height: 270px;
+  width: 250px; */
+  height: 120px;
+  width: 120px;
+  border-radius: 1rem;
+  margin: 2rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 10px solid #ffffff;
+}
+
+.card:hover{
+  border:10px solid #b84c41;
+}
+
+.card img{
+  height: 90%;
+}
+
+.skills-page{
+  flex-wrap: wrap;
+}
+
+.cards-container{
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding:2rem 0rem;
+  overflow-x: hidden;
+}
+
+.logo-name{
+  position: absolute;
+  bottom: -3rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.view-resume{
+  height: 50px;
+  width: 200px;
+  background-color: #fff;
+  margin-top:5rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s linear;
+}
+
+.view-resume a{
+  text-decoration: none;
+  color: #b84c41;
+}
+
+.view-resume:active a{
+  transform: scale(1.05);
+  color: #64A091;
+}
+
+.atom{
+  position: absolute;
+  height: 200%;
+  opacity: 0.5;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.projects-page .card img{
+  height: auto;
+  width: 100%;
+}
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: white;
+  width:10px;
+}
+
+.social-media-page a {
+  background-color: white;
+  color           : #64a091;
+  margin          : 20px;
+  font-size       : 2rem;
+  height          : 80px;
+  width           : 80px;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  text-decoration : none;
+  position        : relative;
+  transition      : color 0.5s ease-out;
+  border-radius   : 1rem;
+}
+
+.social-media-page a::after {
+  content         : '';
+  position        : absolute;
+  height          : 10%;
+  width           : 100%;
+  bottom          : 0px;
+  bottom          : 0px;
+  background-color: #64a091;
+  transition      : all 0.5s ease-out;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: none;
+}
+
+.social-media-page a i {
+  z-index: 1;
+}
+
+.social-media-page a:hover::after {
+  height: 100%;
+  border-radius: 1rem;
+}
+
+
+
+.cards-container > div{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.mobile-view-heading{
+  color: #b84c41;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 5;
+}
+
+
+
+/* @media screen and (max-width: 1260px)
+{
+  .card{
+    height: 120px;
+    width: 120px;
+  }
+} */
+@media screen and (min-width: 500px)
+{
+  .logo-name{
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 780px)
+{
+  .circle {
+    display: block;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  .move-anti-clockwise,
+  .move-clockwise {
+    display: block;
+  }
+
+  .main-container{
+    height: 100vh;
+    position: relative;
+  transform: rotate(0deg);
+  transform-origin: top left;
+  transition: all 0.5s;
+  }
+
+  .about-me-page,
+  .skills-page,
+  .projects-page,
+  .social-media-page {
+   height: 100%;
+   width: 100%;
+   position: absolute;
+   transform-origin: top left;
+   top: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .skills-page {
+  transform: rotate(-90deg);
+  flex-direction: row;
+}
+
+.projects-page {
+  transform: rotate(-180deg);
+  flex-direction: row;
+}
+
+.social-media-page {
+  transform: rotate(-270deg);
+  flex-direction: row;
+}
+
+body {
+  overflow-y: hidden;
+}
+
+.mobile-view-heading{
+  display: none;
+}
+
+.card{
+  height: 200px;
+  width: 200px;
+}
+
+.logo-name{
+  font-size: 1.2rem;
+}
+
+.projects-page .card img{
+  height: auto;
+  width: 70%;
+}
+
+.social-media-page a {
+  font-size       : 4rem;
+  height          : 150px;
+  width           : 150px;
+  
+}
+
+.social-media-page a::after {
+  display: block;  
+}
+
+.atom{
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.social-media-page a:hover {
+  color: #fff;
+}
+
+}
